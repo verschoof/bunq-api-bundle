@@ -1,0 +1,83 @@
+parameters:
+    bunq_certificate_storage.class: 'Bunq\Certificate\Storage\FileCertificateStorage'
+    bunq_http_client_factory.class: 'Bunq\HttpClientFactory'
+    bunq_installation_service.class: 'Bunq\Service\InstallationService'
+    bunq_token_storage.class: 'Bunq\Token\Storage\FileTokenStorage'
+    bunq_token_service.class: 'Bunq\Service\TokenService'
+    bunq_client.class:  'Bunq\Client'
+
+    bunq_user_resource.class: 'Bunq\Resource\UserResource'
+    bunq_monetary_account_resource.class: 'Bunq\Resource\MonetaryAccountResource'
+    bunq_payment_resource.class: 'Bunq\Resource\PaymentResource'
+    bunq_card_resource.class: 'Bunq\Resource\CardResource'
+
+services:
+    bunq_certificate_storage:
+        class: "%bunq_certificate_storage.class%"
+        arguments:
+            - "%bunq_storage_location%"
+
+    bunq_http_client_factory:
+        class: "%bunq_http_client_factory.class%"
+
+    bunq_http_installation_client:
+        class:   GuzzleHttp\Client
+        factory: "bunq_http_client_factory:createInstallationClient"
+        arguments:
+            - "%bunq_api_uri%"
+            - "@bunq_certificate_storage"
+
+    bunq_http_api_client:
+        class: GuzzleHttp\Client
+        factory: "bunq_http_client_factory:create"
+        arguments:
+            - "%bunq_api_uri%"
+            - "@bunq_token_service"
+            - "@bunq_certificate_storage"
+
+    bunq_installation_service:
+        class: "%bunq_installation_service.class%"
+        arguments:
+            - "@bunq_http_installation_client"
+            - "@bunq_certificate_storage"
+            - "%bunq_api_key%"
+            - "%bunq_api_permitted_ips%"
+
+    bunq_token_storage:
+        class: "%bunq_token_storage.class%"
+        arguments:
+            - "%bunq_storage_location%"
+
+    bunq_token_service:
+        class: "%bunq_token_service.class%"
+        arguments:
+            - "@bunq_installation_service"
+            - "@bunq_token_storage"
+            - "@bunq_certificate_storage"
+
+    bunq_client:
+        class: "%bunq_client.class%"
+        arguments:
+            - "@bunq_http_api_client"
+
+# Resources
+
+    bunq_user_resource:
+        class: "%bunq_user_resource.class%"
+        arguments:
+            - "@bunq_client"
+
+    bunq_monetary_account_resource:
+        class: "%bunq_monetary_account_resource.class%"
+        arguments:
+            - "@bunq_client"
+
+    bunq_payment_resource:
+        class: "%bunq_payment_resource.class%"
+        arguments:
+            - "@bunq_client"
+
+    bunq_card_resource:
+        class: "%bunq_card_resource.class%"
+        arguments:
+            - "@bunq_client"

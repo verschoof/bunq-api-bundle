@@ -1,0 +1,21 @@
+{
+    "name": "verschoof/bunq-api-bundle",
+    "description": "Implements the bunq-api into your Symfony application",
+    "type": "symfony-bundle",
+    "license": "GNU GENERAL PUBLIC LICENSE",
+    "authors": [
+        {
+            "name": "Mitchel Verschoof",
+            "email": "mitchel@verschoof.net"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Verschoof\\BunqApiBundle\\": "src/"
+        }
+    },
+    "require": {
+        "verschoof/bunq-api": "^1.0"
+    }
+}
