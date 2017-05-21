@@ -1,9 +1,9 @@
 parameters:
     bunq_certificate_storage.class: 'Bunq\Certificate\Storage\FileCertificateStorage'
     bunq_http_client_factory.class: 'Bunq\HttpClientFactory'
-    bunq_installation_service.class: 'Bunq\Service\InstallationService'
+    bunq_installation_service.class: 'Bunq\Service\DefaultInstallationService'
     bunq_token_storage.class: 'Bunq\Token\Storage\FileTokenStorage'
-    bunq_token_service.class: 'Bunq\Service\TokenService'
+    bunq_token_service.class: 'Bunq\Service\DefaultTokenService'
     bunq_client.class:  'Bunq\Client'
 
     bunq_user_resource.class: 'Bunq\Resource\UserResource'

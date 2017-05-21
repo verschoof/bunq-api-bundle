@@ -1,6 +1,6 @@
 <?php
 
-namespace Bunq\ApiBundle;
+namespace Verschoof\BunqApiBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
