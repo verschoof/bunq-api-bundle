@@ -16,6 +16,6 @@
         }
     },
     "require": {
-        "verschoof/bunq-api": "^1.0"
+        "verschoof/bunq-api": "^2.0"
     }
 }
