@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ffbed52dc67bc88df297768a30836d9",
+    "content-hash": "dc2796afc504e23fac638cdda64b7210",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -366,16 +366,16 @@
         },
         {
             "name": "verschoof/bunq-api",
-            "version": "v1.0.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verschoof/bunq-api.git",
-                "reference": "393139af3caa1b9ece0ed0b1fd5675ee3d15cb44"
+                "reference": "e9a7972f0349842adc47a9e7c6d6435358a93c88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verschoof/bunq-api/zipball/393139af3caa1b9ece0ed0b1fd5675ee3d15cb44",
-                "reference": "393139af3caa1b9ece0ed0b1fd5675ee3d15cb44",
+                "url": "https://api.github.com/repos/verschoof/bunq-api/zipball/e9a7972f0349842adc47a9e7c6d6435358a93c88",
+                "reference": "e9a7972f0349842adc47a9e7c6d6435358a93c88",
                 "shasum": ""
             },
             "require": {
@@ -403,7 +403,7 @@
                 }
             ],
             "description": "An API client that talks to bunq",
-            "time": "2017-05-20T14:17:21+00:00"
+            "time": "2017-06-08T18:23:47+00:00"
         }
     ],
     "packages-dev": [],
