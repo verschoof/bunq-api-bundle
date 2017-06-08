@@ -34,6 +34,8 @@ services:
             - "%bunq_api_uri%"
             - "@bunq_token_service"
             - "@bunq_certificate_storage"
+            - "@bunq_installation_service"
+            - "@bunq_token_storage"
 
     bunq_installation_service:
         class: "%bunq_installation_service.class%"
