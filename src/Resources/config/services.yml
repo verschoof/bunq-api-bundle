@@ -11,6 +11,8 @@ parameters:
     bunq_payment_resource.class: 'Bunq\Resource\PaymentResource'
     bunq_card_resource.class: 'Bunq\Resource\CardResource'
 
+    bunq_setup_console_command.class: 'Verschoof\BunqApiBundle\Console\SetupBunqCommand'
+
 services:
     bunq_certificate_storage:
         class: "%bunq_certificate_storage.class%"
@@ -83,3 +85,12 @@ services:
         class: "%bunq_card_resource.class%"
         arguments:
             - "@bunq_client"
+
+# Console commands
+
+    bunq_setup_console_command:
+        class: "%bunq_setup_console_command.class%"
+        arguments:
+            - "%bunq_storage_location%"
+        tags:
+            - { name: 'console.command' }
