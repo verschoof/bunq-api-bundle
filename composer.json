@@ -2,7 +2,7 @@
     "name": "verschoof/bunq-api-bundle",
     "description": "Implements the bunq-api into your Symfony application",
     "type": "symfony-bundle",
-    "license": "GNU GENERAL PUBLIC LICENSE",
+    "license": "MIT",
     "authors": [
         {
             "name": "Mitchel Verschoof",
